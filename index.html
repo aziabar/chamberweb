@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>March 2024</title>
+  <link rel="stylesheet" href="css/style.css">
+<body>
+  <header>
+    <div class="container">
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Category</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div class="datefield">
+    <div class="container">
+      <h3>Date Calculator</h3>
+      <div class="dateInputArea">
+        <strong>From</strong>
+        <div class="dateInput">
+          <span class="day">
+            <select name="day" id="dayF">
+              <option value="dd">dd</option>
+            </select>
+          </span>
+          <span class="month">
+            <select name="month" id="monthF">
+              <option value="mm">mm</option>
+            </select>
+          </span>
+          <span class="year">
+            <select name="year" id="yearF">
+              <option value="yyyy">yyyy</option>
+            </select>
+          </span>
+        </div>
+        <strong>To</strong>
+        <div class="dateInput">
+          <span class="day">
+            <select name="day" id="dayT">
+              <option value="dd">dd</option>
+            </select>
+          </span>
+          <span class="month">
+            <select name="month" id="monthT">
+              <option value="mm">mm</option>
+            </select>
+          </span>
+          <span class="year">
+            <select name="year" id="yearT">
+              <option value="yyyy">yyyy</option>
+            </select>
+          </span>
+        </div>
+      </div>
+      <div class="dateSubmit">
+        <input type="button" value="Calculate">
+      </div>
+      <div class="dateOutputArea">
+        <table>
+          <tr>
+            <th>Sl</th>
+            <th>Data</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>01</td>
+            <td> <span id="sy-1"> </span></td>
+            <td><span id="deleteBtn">Delete</span></td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Taydad -->
+
+  <div class="taydadArea">
+    <div class="container">
+      <h3>%</h3>
+      <div class="taydadCalculteArea">
+        <table>
+          <tr>
+            <th>Sl</th>
+            <th>Data</th>
+            <th>Tk</th>
+            <th>%</th>
+          </tr>
+          <tr>
+            <td>01</td>
+            <td>Main Balance</td>
+            <td><input type="number" name="ts1" id="ts1" value="199999999"></td>
+            <td><input type="number" name="per1" id="per1" value="19"></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Sl01 + %</td>
+            <td><input type="number" name="ts2" id="ts2" value="199999999"></td>
+            <td><input type="number" name="per2" id="per2" value="19"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer Area -->
+  <footer>
+    <div class="container">
+      <span class="CopyrightContent">
+        Copyright <span id="copyrightStart">2024</span> 
+        <span id="CopyrightNetxGen">
+          -<span id="copyrightCurrent">2024</span>
+        </span>  by HM Juwel. All Rights Reserved.
+      </span>
+    </div>
+  </footer>
+
+  <script src="javaScript/app.js"></script>
+</body>
+</html>
