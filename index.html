@@ -3,115 +3,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
   <title>March 2024</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 <body>
   <header>
     <div class="container">
-      <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Category</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-      </ul>
+      <div class="header-logo">
+        <span id="pulse">
+          <strong></strong>
+        </span>
+        <span id="logo"> Logo</span>
+      </div>
+      <div class="header-navigation">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Category</a>
+          </li>
+          <li>
+            <a href="#whatsAppSend">whatsApp</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header-search">
+        <input type="search" name="search" id="search" placeholder="Search">
+      </div>
     </div>
   </header>
-  <div class="datefield">
-    <div class="container">
-      <h3>Date Calculator</h3>
-      <div class="dateInputArea">
-        <strong>From</strong>
-        <div class="dateInput">
-          <span class="day">
-            <select name="day" id="dayF">
-              <option value="dd">dd</option>
-            </select>
-          </span>
-          <span class="month">
-            <select name="month" id="monthF">
-              <option value="mm">mm</option>
-            </select>
-          </span>
-          <span class="year">
-            <select name="year" id="yearF">
-              <option value="yyyy">yyyy</option>
-            </select>
-          </span>
+  <div class="container">
+  <div class="content row-2">
+    <div class="datefield">
+     
+        <h3>Date Calculator</h3>
+        <div class="dateInputArea">
+          <div class="leftdinput">
+          <strong>From</strong>
+          <div class="dateInput">
+            <span class="day">
+              <select name="day" id="dayF">
+                <option value="dd">dd</option>
+              </select>
+            </span>
+            <span class="month">
+              <select name="month" id="monthF">
+                <option value="mm">mm</option>
+              </select>
+            </span>
+            <span class="year">
+              <select name="year" id="yearF">
+                <option value="yyyy">yyyy</option>
+              </select>
+            </span>
+          </div>
         </div>
-        <strong>To</strong>
-        <div class="dateInput">
-          <span class="day">
-            <select name="day" id="dayT">
-              <option value="dd">dd</option>
-            </select>
-          </span>
-          <span class="month">
-            <select name="month" id="monthT">
-              <option value="mm">mm</option>
-            </select>
-          </span>
-          <span class="year">
-            <select name="year" id="yearT">
-              <option value="yyyy">yyyy</option>
-            </select>
-          </span>
+          <div class="rightdinput">
+          <strong>To</strong>
+          <div class="dateInput">
+            <span class="day">
+              <select name="day" id="dayT">
+                <option value="dd">dd</option>
+              </select>
+            </span>
+            <span class="month">
+              <select name="month" id="monthT">
+                <option value="mm">mm</option>
+              </select>
+            </span>
+            <span class="year">
+              <select name="year" id="yearT">
+                <option value="yyyy">yyyy</option>
+              </select>
+            </span>
+          </div>
+        </div>
+          <div class="dateSubmit">
+            <input type="button" value="Calculate">
+          </div>
+        </div>
+        
+        <div class="dateOutputArea">
+          <table>
+            <tr>
+              <th>Sl</th>
+              <th>Data</th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td> <span id="sy-1"> </span></td>
+              <td><span id="deleteBtn">Delete</span></td>
+            </tr>
+  
+          </table>
+        </div>
+      </div> 
+    </div>
+  
+    <!-- Taydad -->
+    <div class="taydadArea row-2">
+      
+        <div class="taydadFild">
+          <h3>%</h3>
+        <div class="taydadCalculteArea">
+          <table id="table">
+            <tr>
+              <th>Sl</th>
+              <th>Data</th>
+              <th>Tk</th>
+              <th>%</th>
+              <th>=</th>
+            </tr>
+            <tr id="row1">
+              <td>01</td>
+              <td>Main Balance</td>
+              <td><input type="number" name="ts1" id="ts1"></td>
+              <td><input type="number" name="per1" id="per1" value="2.5"></td>
+              <td><input type="number" name="eq1" id="eq1"></td>
+            </tr>
+            <tr id="row2">
+              <td>02</td>
+              <td>Sl01 × %</td>
+              <td><input type="number" name="ts2" id="ts2"></td>
+              <td><input type="number" name="per2" id="per2" value="15"></td>
+              <td><input type="number" name="eq2" id="eq2"></td>
+            </tr>
+            <tr id="row3">
+              <td>03</td>
+              <td>Sl0(1+2) × %</td>
+              <td><input type="number" name="ts3" id="ts3"></td>
+              <td><input type="number" name="per3" id="per3"></td>
+              <td><input type="number" name="eq3" id="eq3"></td>
+            </tr>
+            <tr id="row4">
+              <td>04</td>
+              <td colspan="3">Total</td>             
+              <td><input type="number" name="eq4" id="eq4"></td>
+            </tr>
+          </table>
+        </div>
         </div>
       </div>
-      <div class="dateSubmit">
-        <input type="button" value="Calculate">
-      </div>
-      <div class="dateOutputArea">
-        <table>
-          <tr>
-            <th>Sl</th>
-            <th>Data</th>
-            <th>Action</th>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td> <span id="sy-1"> </span></td>
-            <td><span id="deleteBtn">Delete</span></td>
-          </tr>
+  </div>
 
-        </table>
+
+
+<!-- whatsApp Message Send Area -->
+<div class="container">
+<div class="whatsAppmsendArea" id="whatsAppSend">
+  
+    <h3>whatsapp send app </h3>
+    <h6>add number without space like 8801712411101 not <strike>+88 (017) 2912606 </strike></h6>
+    <input id="number" type="numric" placeholder="Number 88017160360" value="880">
+    <input id="name" type="text" placeholder="Name of Reciever">
+    <input id="msg" type="text" placeholder="Type Message" value="Hi">
+    <button onclick="send_handle()">send</button>
+</div>
+</div>
+
+
+
+<!-- new Layout -->
+
+<div class="container">
+  <div class="circleBox">
+    <div class="circleA">
+      <div class="circleRows">
+
+      </div>
+    </div>
+    <div class="love">
+      <div class="heart-1">
+        <div class="heart-2">
+          <div class="heart-3"></div>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- Taydad -->
-
-  <div class="taydadArea">
-    <div class="container">
-      <h3>%</h3>
-      <div class="taydadCalculteArea">
-        <table>
-          <tr>
-            <th>Sl</th>
-            <th>Data</th>
-            <th>Tk</th>
-            <th>%</th>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>Main Balance</td>
-            <td><input type="number" name="ts1" id="ts1" value="199999999"></td>
-            <td><input type="number" name="per1" id="per1" value="19"></td>
-          </tr>
-          <tr>
-            <td>02</td>
-            <td>Sl01 + %</td>
-            <td><input type="number" name="ts2" id="ts2" value="199999999"></td>
-            <td><input type="number" name="per2" id="per2" value="19"></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
+</div>
 
   <!-- footer Area -->
   <footer>
