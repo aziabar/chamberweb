@@ -1,0 +1,435 @@
+
+/*
+Author: HM Juwel
+Date:  11 Dec 2024 
+
+*/
+
+@media only screen and (max-width: 980px) {
+  .container {
+    max-width: 668px;
+  } 
+  header {
+    font-size: 20px;
+  }
+  header .header-navigation {
+    max-width: 400px;
+  }
+/* End Header area */
+
+  .datefield h3 {
+    height: 25px;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  
+  .datefield select {
+    width: 95px;
+    font-size: 14px;
+  }
+  .dateInputArea .leftdinput,
+  .dateInputArea .rightdinput {
+    float: none;
+    width: 100%;
+  }
+  .datefield .dateInput,
+  .datefield .dateSubmit {
+    width: 100%;
+  }
+  .datefield .dateSubmit input[type="button"] {
+    height: 25px;
+    font-size: 15px;
+  }
+
+  .dateOutputArea table {
+    font-size: 14px;
+  }
+  .dateOutputArea table th,
+  .dateOutputArea table td {
+    padding: 4px;
+  }
+  .dateOutputArea table [id^="deleteBtn"] {
+    width: 50px;
+    height: 22px;
+  }
+
+  /* ---- */
+  .taydadFild {
+    font-size: 15px;
+  }
+  .taydadArea h3 {
+    height: 25px;
+  }
+  .taydadCalculteArea table tr input {
+    font-size: 15px;
+  }
+  
+}
+
+
+
+@media only screen and (max-width: 668px) {
+  header {
+    height: 40px;
+    font-size: 13px;
+  }
+  header .header-logo {
+    height: 35px;
+    width: 60px;
+  }
+  .header-logo #logo {
+    width: 40px;
+    height: 35px; 
+  }
+  .header-logo #pulse {
+    width: 20px;
+    height: 35px;
+  }
+
+  header .header-navigation {
+    width: 220px;
+    height: 35px;
+  }
+  header .header-search {
+    
+    width: 60px;
+    height: 35px;
+  }
+  header .header-search input {
+    width: 60px;
+    height: 25px;
+    font-size: 13px;
+    color: rgb(65, 90, 90);
+  }
+  .container {
+    width: 360px;
+  }
+  .header-navigation ul li {
+    height: 22px;
+    padding: 4px 2px;
+    font-size: 13px;
+  }
+  .header-navigation ul li a {
+    height: 22px;
+  }
+  .header-navigation ul li a:hover {
+    border-bottom: 1px solid rgb(111, 236, 9);
+    border-radius: 2px;
+  }
+/* End Header area */
+  .datefield {
+    float: none;
+    width: 100%;
+  }
+  .datefield h3 {
+    height: 15px;
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .datefield option,
+  .datefield option:not(:nth-child(1)) {
+    text-transform: capitalize;
+    background: transparent;
+  }
+  
+  .datefield select {
+    width: 95px;
+    font-size: 13px;
+  }
+  .dateInputArea .leftdinput,
+  .dateInputArea .rightdinput {
+    float: none;
+    width: 100%;
+  }
+  .datefield .dateInput,
+  .datefield .dateSubmit {
+    width: 100%;
+  }
+  .datefield .dateSubmit input[type="button"] {
+    height: 22px;
+    font-size: 13px;
+  }
+
+  .dateOutputArea table {
+    font-size: 13px;
+  }
+  .dateOutputArea table th,
+  .dateOutputArea table td {
+    padding: 3px;
+  }
+  .dateOutputArea table [id^="deleteBtn"] {
+    width: 50px;
+    height: 22px;
+  }
+
+  /* ---- */
+  .taydadArea {
+    width: 100%;
+    float: none;
+  }
+  .taydadFild {
+    font-size: 13px;
+  }
+  .taydadArea h3 {
+    height: 20px;
+  }
+  .taydadCalculteArea table tr input {
+    font-size: 13px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 480px) {
+  header {
+    height: 40px;
+    font-size: 13px;
+  }
+  header .header-logo {
+    height: 35px;
+    width: 60px;
+  }
+  .header-logo #logo {
+    width: 40px;
+    height: 35px; 
+  }
+  .header-logo #pulse {
+    width: 20px;
+    height: 35px;
+  }
+
+  header .header-navigation {
+    width: 220px;
+    height: 35px;
+  }
+  header .header-search {
+    
+    width: 60px;
+    height: 35px;
+  }
+  header .header-search input {
+    width: 60px;
+    height: 25px;
+    font-size: 13px;
+    color: rgb(65, 90, 90);
+  }
+  .container {
+    width: 360px;
+  }
+  .header-navigation ul li {
+    height: 22px;
+    padding: 4px 2px;
+    font-size: 13px;
+  }
+  .header-navigation ul li a {
+    height: 22px;
+  }
+  .header-navigation ul li a:hover {
+    border-bottom: 1px solid rgb(111, 236, 9);
+    border-radius: 2px;
+  }
+/* End Header area */
+  .datefield {
+    float: none;
+    width: 100%;
+  }
+  .datefield h3 {
+    height: 15px;
+    font-size: 13px;
+  }
+  .datefield option,
+  .datefield option:not(:nth-child(1)) {
+    text-transform: capitalize;
+    background: transparent;
+  }
+  
+  .datefield select {
+    width: 95px;
+    font-size: 13px;
+  }
+  .dateInputArea .leftdinput,
+  .dateInputArea .rightdinput {
+    float: none;
+    width: 100%;
+  }
+  .datefield .dateInput,
+  .datefield .dateSubmit {
+    width: 100%;
+  }
+  .datefield .dateSubmit input[type="button"] {
+    height: 22px;
+    font-size: 13px;
+  }
+
+  .dateOutputArea table {
+    font-size: 13px;
+  }
+  .dateOutputArea table th,
+  .dateOutputArea table td {
+    padding: 3px;
+  }
+  .dateOutputArea table [id^="deleteBtn"] {
+    width: 50px;
+    height: 22px;
+  }
+
+  /* ---- */
+  .taydadArea {
+    width: 100%;
+    float: none;
+  }
+  .taydadFild {
+    font-size: 13px;
+  }
+  .taydadArea h3 {
+    height: 20px;
+  }
+  .taydadCalculteArea table tr input {
+    font-size: 13px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 360px) {
+  header {
+    height: 40px;
+    font-size: 12px;
+  }
+  header .header-logo {
+    height: 35px;
+    width: 50px;
+  }
+  .header-logo #logo {
+    width: 35px;
+    height: 35px; 
+  }
+  .header-logo #pulse {
+    width: 15px;
+    height: 35px;
+  }
+
+  header .header-navigation {
+    width: 180px;
+    height: 35px;
+  }
+  header .header-search {
+    width: 50px;
+    height: 35px;
+  }
+  header .header-search input {
+    width: 55px;
+    height: 25px;
+    font-size: 11px;
+    color: rgb(65, 90, 90);
+  }
+  .container {
+    max-width: 300px;
+  }
+  .header-navigation ul li {
+    height: 20px;
+    padding: 3px 1px;
+    font-size: 12px;
+  }
+  .header-navigation ul li a {
+    height: 20px;
+  }
+  .header-navigation ul li a:hover {
+    border-bottom: 1px solid rgb(111, 236, 9);
+    border-radius: 2px;
+  }
+/* End Header area */
+  .datefield {
+    float: none;
+    width: 100%;
+    font-size: 13px;
+  }
+  .datefield h3 {
+    height: 15px;
+    font-size: 12px;
+  }
+  .datefield option,
+  .datefield option:not(:nth-child(1)) {
+    text-transform: capitalize;
+    background: transparent;
+  }
+  
+  .datefield select {
+    width: 80px;
+    font-size: 12px;
+  }
+  .dateInputArea .leftdinput,
+  .dateInputArea .rightdinput {
+    float: none;
+    width: 100%;
+  }
+  .datefield .dateInput,
+  .datefield .dateSubmit {
+    width: 100%;
+  }
+  .datefield .dateSubmit input[type="button"] {
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .dateOutputArea table {
+    font-size: 12px;
+  }
+  .dateOutputArea table th,
+  .dateOutputArea table td {
+    padding: 3px;
+  }
+  .dateOutputArea table [id^="deleteBtn"] {
+    width: 50px;
+    height: 22px;
+  }
+
+  /* ---- */
+  .taydadArea {
+    width: 100%;
+    float: none;
+  }
+  .taydadFild {
+    font-size: 13px;
+  }
+  .taydadArea h3 {
+    height: 20px;
+  }
+  .taydadCalculteArea table tr input {
+    font-size: 13px;
+  }
+  /* WhatsApp Message Send Area */
+.whatsAppmsendArea {
+  width: 98%;
+  font-size: 13px;
+}
+.whatsAppmsendArea h3 {
+  font-size: 14px;
+}
+.whatsAppmsendArea #number,
+.whatsAppmsendArea #name{
+  float: none;
+  width: 100%;
+}
+.whatsAppmsendArea #number {
+  margin-right: 0px;
+}
+
+.whatsAppmsendArea input {
+  font-size: 13px;
+}
+
+.whatsAppmsendArea #msg {
+  height: 20px;
+
+}
+.whatsAppmsendArea button {
+  height: 20px;
+  font-size: 13px;
+}
+  /* footer */
+  footer {
+    font-size: 9px;
+
+  }
+}
