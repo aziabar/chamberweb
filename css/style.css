@@ -6,70 +6,200 @@
   -ms-box-sizing: border-box !important;
   box-sizing: border-box !important;
 }
+title {
+  text-transform: uppercase;
+  background-color: red;
+}
+body {
+  background-color: rgb(189, 199, 209);
+}
 header {
   width: 100%;
+  height: 50px;
+  padding: 2px 0px;
   background: transparent;
   position: sticky;
   top: 0;
-  background-color: green;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+}
+header .header-logo {
+  float: left;
+  width: 80px;
+  height: 45px;
+  cursor: default;
+}
+.header-logo #logo {
+  float: left;
+  width: 60px;
+  height: 45px; 
+  color: rgb(158, 11, 11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-logo #pulse {
+  float: left;
+  width: 20px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-logo #pulse strong {
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 1;
+}
+.header-logo #pulse strong::before,
+.header-logo #pulse strong::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: red;
+  z-index: -1;
+  opacity: 1;
+}
+.header-logo #pulse strong::before {
+  animation: pulse 2s ease-out infinite;
+}
+.header-logo #pulse strong::after {
+  animation: pulse 2s 1s ease-out infinite;
+}
+@keyframes pulse {
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+header .header-navigation {
+  float: left;
+  margin-top: 2px;
+  width: 600px;
+  height: 45px;
+}
+header .header-search {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 45px;
+  cursor: pointer;
+}
+header .header-search input {
+  width: 80px;
+  height: 35px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  padding: 0px 2px;
+}
+header .header-search input:focus {
+  outline: none;
 }
 .container {
-  max-width: 360px;
+  max-width: 1280px;
   margin: auto;
   border: 1px dashed red;
 }
-header ul {
+.header-navigation ul {
   list-style: none;
   height: 100%;
   width: 100%;
-  text-align: center;
   margin: 5px;
 }
-header ul li {
+.header-navigation ul li {
   display: inline-block;
-  height: 23px;
-  padding: 0px 8px;
+  height: 30px;
+  padding: 4px 8px;
   font-size: 18px;
   color: aliceblue;
-  background-color: red;
 }
-header ul li a {
+.header-navigation ul li a {
   text-decoration: none;
-  color: white;
+  text-transform: capitalize;
+  color: rgb(182, 182, 182);
+  height: 30px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+.header-navigation ul li a:hover {
+  color: #ffffff;
+  border-bottom: 2px solid rgb(111, 236, 9);
+  border-radius: 1px;
+}
+.content {
+  width: 100%;
+  margin: auto;
+}
+content::after {
+  content: '';
+  clear: both;
+  display: table;
 }
 
 .datefield {
   padding-top: 10px;
-  background-color: aliceblue;
+  float: left;
 }
 .datefield h3 {
+  height: 30px;
   text-align: center;
   background-color: red;
   color: #fcfcfc;
+  font-size: 22px;
+}
+.dateInputArea,
+.dateOutputArea {
+  height: 100%;
+  padding: 5px;
 }
 .datefield option,
 .datefield option:not(:nth-child(1)) {
   text-transform: capitalize;
+  background: transparent;
 }
 
 .datefield select {
   text-align: center;
   width: 80px;
+  font-size: 16px;
   border-radius: 5px;
-  border-color: azure;
+  border-color: rgb(80, 87, 87);
+  background: transparent;
+}
+.dateInputArea .leftdinput,
+.dateInputArea .rightdinput {
+  float: left;
+  width: 50%;
+  padding: 5px 0px;
 }
 .datefield .dateInput,
 .datefield .dateSubmit {
   width: 100%;
   margin-bottom: 5px;
 }
+.datefield .dateSubmit {
+  display: flex;
+}
 .datefield .dateSubmit input[type="button"] {
-  width: 100%;
+  text-align: center;
+  width: 300px;
   height: 25px;
+  margin: auto;
   background-color: rgb(17, 129, 17);
   color: aliceblue;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 10px;
+  border-color: transparent;
 }
 .datefield .dateSubmit input[type="button"]:hover {
   background-color: rgb(3, 151, 3);
@@ -78,8 +208,10 @@ header ul li a {
   background-color: rgb(74, 10, 134);
 }
 .dateOutputArea table {
-  border-collapse: collapse;
+  font-size: 20px;
   width: 100%;
+  border: 1px solid rgb(139, 123, 123);
+  border-collapse: collapse;
 }
 .dateOutputArea table th,
 .dateOutputArea table td {
@@ -88,43 +220,65 @@ header ul li a {
   border-bottom: 1px solid #ddd;
 }
 .dateOutputArea table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #bdb5b5;
 }
 .dateOutputArea table tr:hover {
   background-color: coral;
 }
-.dateOutputArea table tr #deleteBtn {
-  color: red;
+.dateOutputArea table [id^="deleteBtn"] {
+  display: block;
+  width: 55px;
+  height: 25px;
+  padding: 3px 1px;
+  background-color: red;
+  color: rgb(255, 255, 255);
+  text-align: center;
   font-weight: bolder;
+  border-radius: 5px;
   cursor: pointer;
 }
-
+.datefield,
 .taydadArea {
-  background-color: aliceblue;
-  margin-top: 5px;
+  width: 50%;
+  padding: 10px;
+}
+.taydadArea {
+  float: right;
   margin-bottom: 10px;
 }
+.taydadFild {
+  width: 100%;
+  font-size: 22px;
+}
 .taydadArea h3 {
-  text-align: center;
+  height: 30px;
+  margin-bottom: 10px;
   background-color: red;
+  text-align: center;
   color: white;
-  margin: 10px 0px;
 }
 .taydadCalculteArea table {
   border-collapse: collapse;
   width: 100%;
+  text-align: center;
 }
 .taydadCalculteArea table tr td:nth-child(1) {
-  width: 25px;
+  width: 10%;
 }
 .taydadCalculteArea table tr td:nth-child(2) {
-  width: 150px;
+  width: 30%;
 }
-.taydadCalculteArea table tr td:nth-child(13) {
-  width: 80px;
+.taydadCalculteArea table tr td:nth-child(3) {
+  width: 26%;
 }
 .taydadCalculteArea table tr td:nth-child(4) {
-  width: 25px;
+  width: 11%;
+}
+.taydadCalculteArea table tr td:nth-child(5) {
+  width: 23%;
+}
+.taydadCalculteArea table tr:hover {
+  background-color: antiquewhite;
 }
 .taydadCalculteArea table td,
 .taydadCalculteArea table th {
@@ -132,6 +286,7 @@ header ul li a {
   padding: 0px 2px;
 }
 .taydadCalculteArea table tr input {
+  font-size: 22px;
   border: none;
   background: transparent;
 }
@@ -140,36 +295,207 @@ header ul li a {
   
 }
 .taydadCalculteArea table tr input[id^="per"] {
-  width: 30px;
+  width: 100%;
   text-align: right;
-  padding-right: 3px;
+  padding-right: 5px;
 }
 .taydadCalculteArea table tr input[id^="ts"] {
-  width: 90px;
+  width: 100%;
   text-align: right;
-  padding-right: 3px;
+  padding-right: 5px;
+}
+.taydadCalculteArea table tr input[id^="eq"] {
+  width: 100%;
+  text-align: right;
+  padding-right: 5px;
+}
+
+
+/* new layout */
+.box-c2 {
+  width: 100%;
+  height: 500px;
+  margin: 10px;
+  overflow: hidden;
+  text-align: justify;
+}
+.box-c2 [class|=c2] {
+  float: left;
+  width: calc(100% / 2 - 10px);
+  height: 100%;
+}
+
+
+
+/* HTML: <div id="heart"></div> */
+.love {
+  width: 100%;
+  height: 150px;
+  margin: 100px 50px;
+  opacity: 0.7;
+}
+[class|="heart"] {
+  position: relative;
+  width: 70px;
+  height: 80px;
+  opacity: 1;
+}
+[class|="heart"]:before,
+[class|="heart"]:after {
+  position: absolute;
+  content: "";
+  left: 40px;
+  top: 0;
+  width: 40px;
+  height: 70px;
+  background: rgb(6, 175, 15);
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+[class|="heart"]:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+.heart-2 {
+  animation: heart 2s ease-out infinite;
+}
+.heart-3 {
+  animation: heart 2s ease-out infinite;
+}
+@keyframes heart {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* circle Box Area Start */
+.circleBox {
+  width: 100%;
+  height: 400px;
+}
+.circleA {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 50%;
+  animation: rotate 30s linear infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.circleRows {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  border-radius: 50%;
+}
+.circleRows::before {
+  position: absolute;
+  content: '';
+  width: 60px;
+  height: 60px;
+  border: 2px solid red;
+  border-radius: 50%;
+}
+.circleRows::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+}
+.circleRows span {
+  position: absolute;
+  transform: rotate(calc(12deg * var(--index)));
+  inset: -1px;
+  text-align: center;
+}
+.circleRows span p {
+  display: inline-block;
+  width: 2px;
+  height: 40px;
+  background: red;
+}
+/* circle Box Area End*/
+
+/* WhatsApp Message Send Area */
+.whatsAppmsendArea {
+  width: 350px;
+  margin: 5px;
+  padding: 5px;
+  text-transform: capitalize;
+}
+.whatsAppmsendArea h3 {
+  text-align: center;
+  color: red;
+  margin-bottom: 5px;
+}
+.whatsAppmsendArea h6 {
+  color: gray;
+}
+.whatsAppmsendArea #number,
+.whatsAppmsendArea #name{
+  float: left;
+  width: 48%;
+  margin: 5px 0px;
+  padding: 2px 5px;
+}
+.whatsAppmsendArea #number {
+  margin-right: 12px;
+}
+
+.whatsAppmsendArea input {
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid rgb(54, 51, 51);
+  font-size: 15px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.whatsAppmsendArea #msg,
+.whatsAppmsendArea button {
+  width: 100%;
+}
+.whatsAppmsendArea #msg {
+  height: 30px;
+  padding: 0px 5px;
+  margin-bottom: 5px;
+}
+.whatsAppmsendArea button {
+  height: 25px;
+  font-size: 16px;
+  text-transform: capitalize;
+  background-color: rgb(45, 151, 3);
+  color: #fcfcfc;
+  border-radius: 10px;
+  border: none;
+}
+.whatsAppmsendArea button:hover {
+  background: linear-gradient(rgb(75, 202, 24), rgb(51, 155, 9));
 }
 
 
 /* footer */
 footer {
   background-color: rgb(27, 32, 65);
-  height: 20px;
+  height: 40px;
   font-size: 11px;
   color: bisque;
   text-align: center;
+  align-content: center;
 }
 .CopyrightContent {
   line-height: 20px;
-}
-/* Media queries */
-@media only screen and (min-width: 480px) {
-  .container {
-    max-width: 80%;
-  } 
-}
-@media only screen and (min-width: 360px) {
-  .container {
-    max-width: 80%;
-  } 
 }
