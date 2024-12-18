@@ -21,6 +21,10 @@ const hoursNow = now.getHours();
 const monthArr = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 const thisMonth = monthArr[monthNow];
 
+const currentDate = `${dayNow} ${thisMonth}, ${fullYear}`;
+console.log(currentDate);
+const titleTag = document.getElementsByTagName('title');
+titleTag[0].innerHTML = currentDate;
 
 function dateTimeCalculator(ds) {
 
@@ -42,6 +46,21 @@ function dateTimeCalculator(ds) {
 
 }
 
+function dateTimeCalculator2(ds) {
+
+  let s = 1000;
+  let m = s * 60;
+  let h = m * 60;
+  let d = h * 24;
+  let mo = d * 30.41;
+  let yr = (mo * 12);
+
+  const days = Math.floor(ds / d);
+
+
+  return `${days} days`;
+
+}
 
 
 function setDate(id, data) {
@@ -135,24 +154,122 @@ setDate(dayIdT, dayNow);
 
 
 
+let distanceResultsStore = [];
 
+function dateRelustTable(sl, result, selectTable) {
+  let slNumber;
+  if(sl <= 9) {
+    slNumber = `0${sl}`;
+  }else if(sl > 9) {
+    slNumber = `${sl}`;
+  }
+  let htmlRow = `
+  <tr>
+  <td> ${slNumber} </td>
+  <td> <span id="sy-${slNumber}"> ${result} </span></td>
+  <td><span id="deleteBtn${slNumber}">Delete</span></td>
+  </tr>`;
+  selectTable.innerHTML += htmlRow;
+}
 
 const dateSubmit = document.getElementsByClassName('dateSubmit')[0];
+
 dateSubmit.onclick = function () {
+  
+  if(dayId.value === 'dd') {
+    dayId.style.borderColor = 'red';
+    dayId.style.borderWidth = '2px';
+    setTimeout( () => {
+      dayId.style.borderWidth = '1px';
+      dayId.style.borderColor = 'white';
+    }, 1000)
+  }else if(dayId.value !== 'dd') {
+
   let startDate = new Date(`${dayId.value} ${monthId.value} ${yearId.value}`);
   let endtDate = new Date(`${dayIdT.value} ${monthIdT.value} ${yearIdT.value}`);
   let distance = endtDate.getTime() - startDate.getTime();
 
   let outPutDistance = document.getElementById('sy-1');
-  outPutDistance.innerHTML = `${dateTimeCalculator(distance)}`;
+  //outPutDistance.innerHTML = `${dateTimeCalculator(distance)} </br> ${dateTimeCalculator2(distance)}`;
 
-console.log(distance);
+  let createDResults = `${dateTimeCalculator(distance)} : ${dateTimeCalculator2(distance)}`;
+  
+  distanceResultsStore.push(createDResults);
 
-console.log(dateTimeCalculator(distance));
+  const storeDistance = localStorage.setItem('dResults', distanceResultsStore);
+  const getDistance = localStorage.getItem('dResults');
+  const dRSArr = getDistance.split(',');
+  // --------------
+  
+  const selectTable = document.querySelector('.dateOutputArea table');
+  selectTable.innerHTML = '';
+  let htmlRow = `
+  <tr>
+  <th>Sl</th>
+  <th>Data</th>
+  <th>Action</th>
+  </tr>`;
+  selectTable.innerHTML = htmlRow;
+
+//  --------------
+  for(i = dRSArr.length; i > 0; i--) {
+    dateRelustTable(dRSArr.length-i+1, dRSArr[i-1], selectTable);
+  }
+  }
 }
 
 
 
+
+// Taydad Calculator Area
+const sRow1 = document.getElementById('table');
+sRow1.oninput = function percentA() {
+  let data1 = document.getElementById('ts1').value;
+  let per1 = document.getElementById('per1').value;
+  let percent1 = (data1 * (per1 / 100));
+  document.getElementById('eq1').value = percent1.toFixed(2);
+  document.getElementById('ts2').value = percent1.toFixed(2);
+
+  let data2 = document.getElementById('ts2').value;
+  let per2 = document.getElementById('per2').value;
+  let percent2 = (data2 * (per2 / 100));
+  document.getElementById('eq2').value = percent2.toFixed(2);
+  document.getElementById('ts3').value = (percent2 + percent1).toFixed(2);
+
+  let data3 = document.getElementById('ts3').value;
+  let per3 = document.getElementById('per3').value;
+  let percent3 = (data3 * (per3 / 100));
+  document.getElementById('eq3').value = percent3.toFixed(2);
+
+  let total = percent1 + percent2 + percent3;
+  console.log(typeof(total));
+  document.getElementById('eq4').value = total.toFixed(2);
+}
+
+
+// Circle Area
+const barSeconds = document.querySelector('.circleRows');
+const barElement = [];
+
+for (let i = 1; i <= 30; i++) {
+  barElement.push(
+    `<span style="--index:${i}"><p></p></span>`
+  );
+}
+barSeconds.insertAdjacentHTML("afterbegin", barElement.join(""));
+
+
+
+// whatsApp Message send Area
+function send_handle() {
+  const num = document.getElementById("number").value;
+  const msg = document.getElementById("msg").value;
+  const name = document.getElementById("name").value;
+  //window.open(`https://wa.me/${num}?text=I%27m%20api%20msg%20hello%20${name}%20friend%20${msg}`, '_blank');
+  
+  const win = window.open(`https://wa.me/${num}?text=I%27m%20api%20${name}%20friend%20${msg}`, '_blank');
+  win.focus();
+}
 
 
 // footer
